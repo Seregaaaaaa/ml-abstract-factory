@@ -4,6 +4,7 @@ ML-Abstract-Factory — это библиотека, реализующая па
 
 ## Project Structure
 
+```
 ml-abstract-factory/
 ├── src/                     # Исходный код проекта
 │   ├── abstract/            # Абстрактные базовые классы
@@ -28,6 +29,7 @@ ml-abstract-factory/
 │   └── traditional_example.py  # Пример с LogReg и TF-IDF
 │
 └── README.md                # Основная документация
+```
 
 ![Диаграмма классов](./class_diagram.drawio.png)
 
