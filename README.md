@@ -20,7 +20,7 @@ ml-abstract-factory/
 │   │   ├── bert_model.py    # Модель на основе BERT
 │   │   └── traditional_model.py  # Классические алгоритмы ML
 │   │
-│   ├── preprocessors/       # Реализации препроцессоров
+│   └── preprocessors/       # Реализации препроцессоров
 │       ├── bert_preprocessor.py  # Токенизатор для BERT
 │       └── traditional_preprocessor.py  # Классический препроцессор (TF-IDF и LE)
 │
