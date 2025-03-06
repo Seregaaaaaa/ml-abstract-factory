@@ -9,13 +9,10 @@ class BertPreprocessor(AbstractPreprocessor):
         self.label_encoder = LabelEncoder()
 
     def fit(self, texts, labels):
-        """Подготовка токенизатора и кодировщика меток"""
         self.label_encoder.fit(labels)
         return self
 
     def transform(self, texts):
-        """Преобразование текстов в формат, необходимый для BERT модели"""
-        # Токенизация с добавлением батч-размерности
         encoded_inputs = self.tokenizer(
             texts,
             padding="max_length",
@@ -26,14 +23,11 @@ class BertPreprocessor(AbstractPreprocessor):
         return encoded_inputs
 
     def fit_transform(self, texts, labels):
-        """Обучение и преобразование в одном вызове"""
         self.fit(texts, labels)
         return self.transform(texts)
 
     def inverse_transform(self, encoded_labels):
-        """Преобразование числовых меток обратно в исходные метки"""
         return self.label_encoder.inverse_transform(encoded_labels)
 
     def encode_labels(self, labels):
-        """Преобразование текстовых меток в числовые"""
         return self.label_encoder.transform(labels)

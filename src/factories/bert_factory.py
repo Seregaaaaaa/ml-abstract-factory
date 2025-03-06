@@ -3,9 +3,7 @@ from ..models.bert_model import BERTModel
 from ..preprocessors.bert_preprocessor import BertPreprocessor
 
 class BertFactory(AbstractFactory):
-    """
-    Конкретная фабрика для создания модели BERT и соответствующего препроцессора
-    """
+
     
     def create_preprocessor(self):
         return BertPreprocessor()
