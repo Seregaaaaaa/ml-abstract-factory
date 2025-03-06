@@ -1,7 +1,6 @@
 from src.abstract.preprocessor import AbstractPreprocessor
 from transformers import BertTokenizer
 from sklearn.preprocessing import LabelEncoder
-import tensorflow as tf
 
 class BertPreprocessor(AbstractPreprocessor):
     def __init__(self, max_length=128, model_name="DeepPavlov/rubert-base-cased"):

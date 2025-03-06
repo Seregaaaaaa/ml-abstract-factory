@@ -11,13 +11,6 @@ class BERTModel(AbstractModel):
         return self.model.fit(train_dataset, validation_data=validation_data, epochs=epochs, callbacks=callbacks)
 
     def predict(self, test_dataset):
-        """
-        Принимает токенизированный входной набор данных от bert_preprocessor
-        и возвращает предсказания модели
-        """
-        # Предсказания модели BERT
         predictions = self.model.predict(test_dataset)
-        
-        # Извлекаем логиты и преобразуем в предсказания классов
         logits = predictions.logits if hasattr(predictions, 'logits') else predictions[0]
         return np.argmax(logits, axis=-1)
